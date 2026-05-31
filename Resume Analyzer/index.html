@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <canvas id="signalCanvas" aria-hidden="true"></canvas>
+
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="AI Resume Analyzer home">
+          <span class="brand-mark"></span>
+          <span>ResumeIQ</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#analyzer">Analyzer</a>
+          <a href="#insights">Insights</a>
+          <a href="#compare">Compare</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="analyzer">
+          <div class="hero-copy">
+            <p class="eyebrow">AI Resume Analyzer</p>
+            <h1>Turn a resume into an interview-ready signal map.</h1>
+            <p class="hero-text">
+              Paste a resume, add a target role, and get a fast read on fit,
+              keywords, impact, structure, and the exact fixes that make the
+              profile sharper.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#workspace">Analyze Resume</a>
+              <button class="ghost-btn" id="loadSample" type="button">
+                Load Sample
+              </button>
+            </div>
+          </div>
+
+          <div class="visual-stage" aria-label="Resume intelligence graphic">
+            <div class="orbital">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="scan-card">
+              <div class="scan-card-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="resume-lines">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+
+              <div class="scan-beam"></div>
+            </div>
+
+            <div class="score-chip">
+              <strong id="heroScore">92</strong>
+              <span>match score</span>
+            </div>
+
+            <div class="keyword-cloud">
+              <span>React</span>
+              <span>Leadership</span>
+              <span>Analytics</span>
+              <span>Python</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="workspace" id="workspace">
+          <div class="input-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Input</p>
+                <h2>Resume Scanner</h2>
+              </div>
+
+              <label class="file-picker">
+                <input
+                  id="resumeFile"
+                  type="file"
+                  accept=".txt,.md,.csv,.pdf,application/pdf"
+                />
+                Upload File
+              </label>
+            </div>
+
+            <label class="field-label" for="targetRole">Target role</label>
+            <input
+              id="targetRole"
+              class="target-input"
+              type="text"
+              value="Product Manager"
+              placeholder="e.g. Data Analyst, Software Engineer"
+            />
+
+            <label class="field-label" for="resumeText">Resume text</label>
+            <textarea
+              id="resumeText"
+              spellcheck="true"
+              placeholder="Paste resume content here..."
+            ></textarea>
+
+            <button class="analyze-btn" id="analyzeBtn" type="button">
+              Analyze Resume
+              <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <aside class="results-panel" id="insights">
+            <div class="score-wrap">
+              <div class="score-ring" id="scoreRing" style="--score: 0">
+                <span id="scoreValue">0</span>
+              </div>
+
+              <div>
+                <p class="section-kicker">Fit Score</p>
+                <h2 id="scoreTitle">Ready for analysis</h2>
+                <p id="scoreSummary">
+                  Paste a resume to reveal strengths, gaps, and priority edits.
+                </p>
+              </div>
+            </div>
+
+            <div class="metrics-grid">
+              <div>
+                <span id="keywordMetric">0%</span>
+                <p>Keyword Fit</p>
+              </div>
+
+              <div>
+                <span id="impactMetric">0%</span>
+                <p>Impact Signals</p>
+              </div>
+
+              <div>
+                <span id="formatMetric">0%</span>
+                <p>Structure</p>
+              </div>
+            </div>
+
+            <div class="insight-list" id="insightList"></div>
+          </aside>
+        </section>
+
+        <section class="compare" id="compare">
+          <div>
+            <p class="section-kicker">Role Match</p>
+            <h2>Keyword Radar</h2>
+          </div>
+
+          <div
+            class="radar-board"
+            id="radarBoard"
+            aria-label="Resume keyword radar"
+          ></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
