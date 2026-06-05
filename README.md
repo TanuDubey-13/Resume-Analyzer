@@ -69,4 +69,5 @@ This version runs fully in the browser. Resume data is not sent to a backend ser
 
 Author -
 Tanu Dubey
+
 Feel free to explore the project and share feedback!
