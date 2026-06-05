@@ -1,58 +1,71 @@
-# Resume Analyzer
+# ResumeIQ - AI Resume Analyzer
 
-## Overview
-
-Resume Analyzer is a frontend web application that allows users to upload PDF resumes, extract text using PDF.js, and generate a resume score along with feedback based on predefined evaluation criteria.
-
-The project is designed to help students and job seekers assess their resumes and identify areas for improvement before applying for internships and jobs.
+ResumeIQ is a frontend resume analyzer built with HTML, CSS, and JavaScript. It helps users paste or upload a resume, select a target role, and get a quick analysis based on keyword match, measurable impact, structure, and improvement suggestions.
 
 ## Features
 
-- Upload resumes in PDF format
-- Extract text from PDF files using PDF.js
-- Analyze resume content
-- Generate a resume score
-- Provide feedback and suggestions
-- Responsive user interface
+- Dark mode responsive user interface
+- Animated background and resume scanning graphics
+- Resume text input and file upload support
+- PDF resume text extraction using PDF.js
+- Target role based keyword matching
+- Resume score calculation
+- Keyword fit, impact signal, and structure metrics
+- Actionable improvement suggestions
+- Keyword radar visualization
+- Sample resume loader for quick testing
 
-## Technologies Used
+## Tech Stack
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
 - PDF.js
 
-## How to Run
+## How It Works
 
-1. Download or clone this repository.
-2. Open the project folder.
-3. Open index.html in your browser.
-4. Upload a PDF resume for analysis.
-5. View the generated score and feedback.
+The analyzer reads resume text from the text area or uploaded file. For PDF files, PDF.js extracts readable text from the document. The JavaScript logic then checks the resume against target role keywords, quantified achievements, action verbs, section structure, and resume length to generate a score and improvement tips.
 
-## Learning Outcomes
+## Project Structure
 
-- Frontend web development
-- JavaScript file handling
-- PDF text extraction using PDF.js
-- DOM manipulation
-- User interface design
-- Building practical web applications
+```text
+Resume-Analyzer/
+  index.html
+  styles.css
+  app.js
+  README.md
+```
 
-## Future Improvements
+## How To Run
 
-- ATS compatibility scoring
-- Job description matching
-- AI-powered feedback generation
-- Resume improvement recommendations
-- User dashboard and analytics
+Open `index.html` in a browser.
 
-## Project Goal
+For PDF upload support, use an internet connection because PDF.js is loaded through a CDN.
 
-The goal of this project is to provide a simple and accessible tool for resume evaluation while strengthening frontend development and problem-solving skills.
+## Deployment
 
-## Author
+This project can be deployed using GitHub Pages.
 
-Tanu Dubey
+1. Keep `index.html`, `styles.css`, and `app.js` in the root of the repository.
+2. Go to repository `Settings`.
+3. Open `Pages`.
+4. Select branch `main` and folder `/root`.
+5. Save and open the generated GitHub Pages link.
+
+## Future Scope
+
+- Add real AI API integration for deeper resume feedback
+- Add job description upload and compare resume against it
+- Support OCR for scanned PDF resumes
+- Add downloadable analysis report
+- Add ATS compatibility score
+- Add authentication and save previous resume reports
+- Improve role keyword database for more job categories
+- Add backend support with Node.js, Express, or Python FastAPI
+
+## Note
+
+This version runs fully in the browser. Resume data is not sent to a backend server. The current analysis is rule based and keyword based, not connected to a real AI model yet.
+
 
 Feel free to explore the project and share feedback!
