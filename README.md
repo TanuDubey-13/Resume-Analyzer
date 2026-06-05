@@ -67,5 +67,6 @@ This project can be deployed using GitHub Pages.
 
 This version runs fully in the browser. Resume data is not sent to a backend server. The current analysis is rule based and keyword based, not connected to a real AI model yet.
 
-
+Author -
+Tanu Dubey
 Feel free to explore the project and share feedback!
